@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Components — Cards</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface); display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .lesson { display: flex; gap: 12px; align-items: center; }
+  .thumb { width: 56px; height: 56px; border-radius: var(--r-md); background: var(--coral-100); display:flex; align-items:center; justify-content:center; font: var(--type-h3); color: var(--coral-700); flex-shrink:0; }
+  .thumb.s { background: var(--sky-100); color: var(--sky-700); }
+  .ttl { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--ink-900); margin: 0; }
+  .sub { font: var(--type-caption); color: var(--fg-3); margin-top: 2px; }
+</style></head>
+<body>
+  <div class="cl-card">
+    <div class="lesson">
+      <div class="thumb">A</div>
+      <div>
+        <p class="ttl">Animal Sounds</p>
+        <div class="sub">Lesson 3 · 12 mins</div>
+      </div>
+    </div>
+  </div>
+  <div class="cl-card cl-card--interactive">
+    <div class="lesson">
+      <div class="thumb s">B</div>
+      <div>
+        <p class="ttl">Big &amp; Small</p>
+        <div class="sub">Lesson 4 · interactive ·</div>
+      </div>
+    </div>
+  </div>
+</body></html>

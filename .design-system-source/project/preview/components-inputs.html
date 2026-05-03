@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Components — Form Inputs</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface); }
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font: var(--type-label); color: var(--ink-700); margin-bottom: 6px; }
+  .input {
+    width: 100%; box-sizing: border-box;
+    font: var(--type-body); color: var(--ink-900);
+    background: #fff;
+    border: 2px solid var(--ink-100);
+    border-radius: var(--r-md);
+    padding: 12px 14px;
+    transition: border-color var(--dur-micro) var(--ease-standard), box-shadow var(--dur-micro) var(--ease-standard);
+    outline: none;
+  }
+  .input:focus { border-color: var(--coral-400); box-shadow: 0 0 0 4px var(--coral-100); }
+  .input.error { border-color: var(--danger-500); }
+  .helper { font: var(--type-caption); color: var(--fg-3); margin-top: 4px; }
+  .helper.err { color: var(--danger-700); }
+  .row { display: flex; gap: 10px; }
+  .row > .field { flex: 1; }
+</style></head>
+<body>
+  <div class="row">
+    <div class="field">
+      <label>Parent's name</label>
+      <input class="input" placeholder="Khun Praew" value="Khun Praew">
+    </div>
+    <div class="field">
+      <label>Child's age</label>
+      <input class="input" placeholder="6">
+    </div>
+  </div>
+  <div class="field">
+    <label>Email</label>
+    <input class="input error" value="praew@@gmail">
+    <div class="helper err">Hmm, that doesn't look like an email.</div>
+  </div>
+</body></html>

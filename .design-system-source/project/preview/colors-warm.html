@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Colors — Warm Secondary</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface); }
+  .group { margin-bottom: 14px; }
+  .row { display: flex; gap: 8px; }
+  .sw { flex: 1; aspect-ratio: 1.6; border-radius: var(--r-md); display: flex; flex-direction: column; justify-content: flex-end; padding: 8px; box-shadow: var(--shadow-sm); }
+  .sw .name { font: var(--type-caption); font-weight: 700; color: var(--ink-800); }
+  .sw .hex  { font: var(--type-caption); color: var(--ink-600); }
+  .sw.dark-fg .name { color: #fff; } .sw.dark-fg .hex { color: rgba(255,255,255,0.85); }
+  h4 { font: var(--type-label); color: var(--fg-3); margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.06em; }
+</style></head>
+<body>
+  <div class="group">
+    <h4>Amber</h4>
+    <div class="row">
+      <div class="sw" style="background:var(--amber-100)"><div class="name">100</div><div class="hex">#FFEEC4</div></div>
+      <div class="sw" style="background:var(--amber-200)"><div class="name">200</div><div class="hex">#FFDD8A</div></div>
+      <div class="sw" style="background:var(--amber-400)"><div class="name">400</div><div class="hex">#FFB547</div></div>
+      <div class="sw dark-fg" style="background:var(--amber-500)"><div class="name">500</div><div class="hex">#F59E1F</div></div>
+      <div class="sw dark-fg" style="background:var(--amber-600)"><div class="name">600</div><div class="hex">#D27F0A</div></div>
+    </div>
+  </div>
+  <div class="group">
+    <h4>Cream · Default surfaces</h4>
+    <div class="row">
+      <div class="sw" style="background:var(--cream-50); outline:1px solid var(--ink-100); outline-offset:-1px"><div class="name">50</div><div class="hex">#FFFCF5</div></div>
+      <div class="sw" style="background:var(--cream-100)"><div class="name">100</div><div class="hex">#FFF6E5</div></div>
+      <div class="sw" style="background:var(--cream-200)"><div class="name">200</div><div class="hex">#FBEDD2</div></div>
+      <div class="sw" style="background:var(--gold-100)"><div class="name">gold-100</div><div class="hex">#FFF1D6</div></div>
+      <div class="sw" style="background:var(--gold-300)"><div class="name">gold-300</div><div class="hex">#FFD66B</div></div>
+    </div>
+  </div>
+</body></html>

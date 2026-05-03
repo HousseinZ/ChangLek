@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Colors — Celebration</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface); }
+  .row { display: flex; gap: 8px; }
+  .sw { flex: 1; aspect-ratio: 1.4; border-radius: var(--r-md); display:flex; flex-direction:column; justify-content:flex-end; padding:10px; box-shadow:var(--shadow-sm); }
+  .sw .name { font: var(--type-label); color: #fff; font-size: 13px; }
+  .sw .hex  { font: var(--type-caption); color: rgba(255,255,255,0.85); }
+  h4 { font: var(--type-label); color: var(--fg-3); margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .note { font: var(--type-caption); color: var(--fg-3); margin-top: 8px; }
+</style></head>
+<body>
+  <h4>Celebration · Logo letter palette</h4>
+  <div class="row">
+    <div class="sw" style="background:var(--celebrate-blue)"><div class="name">blue</div><div class="hex">#2C7BC9</div></div>
+    <div class="sw" style="background:var(--celebrate-green)"><div class="name">green</div><div class="hex">#6FBE44</div></div>
+    <div class="sw" style="background:var(--celebrate-orange)"><div class="name">orange</div><div class="hex">#F08A2A</div></div>
+    <div class="sw" style="background:var(--celebrate-purple)"><div class="name">purple</div><div class="hex">#9C4FB8</div></div>
+    <div class="sw" style="background:var(--celebrate-pink)"><div class="name">pink</div><div class="hex">#E8438A</div></div>
+    <div class="sw" style="background:var(--celebrate-teal)"><div class="name">teal</div><div class="hex">#2EB7B0</div></div>
+  </div>
+  <div class="note">Kid-facing celebrations &amp; achievement badges only. Never UI chrome, never as a gradient.</div>
+</body></html>

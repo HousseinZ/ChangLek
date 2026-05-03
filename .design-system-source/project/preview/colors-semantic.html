@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Colors — Semantic</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+  .item { background: var(--surface-raised); border-radius: var(--r-md); padding: 10px; box-shadow: var(--shadow-sm); }
+  .swatch { height: 36px; border-radius: var(--r-sm); margin-bottom: 6px; }
+  .label { font: var(--type-label); color: var(--ink-800); }
+  .hex { font: var(--type-caption); color: var(--fg-3); }
+</style></head>
+<body>
+  <div class="grid">
+    <div class="item"><div class="swatch" style="background:var(--success-500)"></div><div class="label">Success</div><div class="hex">#6FBE44</div></div>
+    <div class="item"><div class="swatch" style="background:var(--warning-500)"></div><div class="label">Warning</div><div class="hex">#F59E1F</div></div>
+    <div class="item"><div class="swatch" style="background:var(--danger-500)"></div><div class="label">Danger</div><div class="hex">#E25638</div></div>
+    <div class="item"><div class="swatch" style="background:var(--info-500)"></div><div class="label">Info</div><div class="hex">#4FB8E5</div></div>
+  </div>
+</body></html>

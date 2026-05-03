@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Brand — Logo</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 14px; background: var(--surface); display: flex; gap: 10px; align-items: center; }
+  .item { flex: 1; background: #fff; border-radius: var(--r-md); padding: 12px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .item img { max-height: 90px; max-width: 100%; object-fit: contain; }
+  .lbl { font: var(--type-caption); color: var(--fg-3); }
+  .item.dark { background: var(--ink-800); }
+  .item.dark .lbl { color: var(--cream-100); }
+</style></head>
+<body>
+  <div class="item"><img src="../assets/logo-full.png" alt=""><div class="lbl">logo-full.png</div></div>
+  <div class="item"><img src="../assets/logo-wordmark.svg" alt=""><div class="lbl">logo-wordmark.svg</div></div>
+  <div class="item"><img src="../assets/app-icon.png" alt=""><div class="lbl">app-icon.png</div></div>
+</body></html>

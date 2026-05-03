@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Components — Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 22px 20px; background: var(--surface); }
+  .row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .label { font: var(--type-caption); color: var(--fg-3); width: 100%; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+</style></head>
+<body>
+  <div class="row">
+    <div class="label">Sizes & variants</div>
+    <button class="cl-btn cl-btn--lg">Start free trial</button>
+    <button class="cl-btn">Sign up</button>
+    <button class="cl-btn cl-btn--sm">Add</button>
+  </div>
+  <div class="row">
+    <button class="cl-btn cl-btn--accent">Verified ✓</button>
+    <button class="cl-btn cl-btn--secondary">Maybe later</button>
+    <button class="cl-btn cl-btn--ghost">Skip</button>
+    <button class="cl-btn" disabled>Disabled</button>
+  </div>
+</body></html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Spacing — Shadows</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 26px 20px; background: var(--surface); display: flex; gap: 18px; }
+  .box { flex: 1; aspect-ratio: 1.4; background: #fff; border-radius: var(--r-lg); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 10px; }
+  .box .l { font: var(--type-caption); font-family: var(--font-mono); color: var(--ink-700); text-align: center; }
+  .box .l b { display: block; font-family: var(--font-display); font-weight: 800; font-size: 14px; color: var(--coral-600); }
+</style></head>
+<body>
+  <div class="box" style="box-shadow: var(--shadow-sm), var(--inner-highlight)"><div class="l"><b>sm</b>1·2</div></div>
+  <div class="box" style="box-shadow: var(--shadow-md), var(--inner-highlight)"><div class="l"><b>md</b>4·16</div></div>
+  <div class="box" style="box-shadow: var(--shadow-lg), var(--inner-highlight)"><div class="l"><b>lg</b>12·32</div></div>
+  <div class="box" style="box-shadow: var(--shadow-xl), var(--inner-highlight)"><div class="l"><b>xl</b>24·48</div></div>
+</body></html>

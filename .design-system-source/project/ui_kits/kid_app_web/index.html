@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ChangLek · Kid web app</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  html,body{height:100%;margin:0;}
+  body { background: linear-gradient(135deg, var(--cream-100), var(--coral-100)); display: flex; align-items: center; justify-content: center; padding: 24px; box-sizing: border-box; }
+  .surface { display: flex; height: 100%; background: var(--cream-50); }
+</style>
+</head>
+<body data-screen-label="ChangLek Kid Web App">
+<div id="root" style="width: 100%; max-width: 1280px;"></div>
+<script type="text/babel" src="browser-window.jsx"></script>
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="screens.jsx"></script>
+<script type="text/babel">
+  const { useState, useEffect } = React;
+  function App() {
+    const [tab, setTab] = useState('home');
+    const [screen, setScreen] = useState('home');
+    useEffect(() => { lucide.createIcons(); });
+
+    const view = (() => {
+      if (tab === 'lessons' && screen === 'lesson') return <LessonScreen onDone={() => setScreen('lesson-celebrate')} celebrating={false}/>;
+      if (tab === 'lessons' && screen === 'lesson-celebrate') return <LessonScreen onDone={() => {}} celebrating={true} closeCeleb={() => { setScreen('path'); }}/>;
+      if (tab === 'lessons') return <PathScreen onPlay={() => setScreen('lesson')}/>;
+      if (tab === 'me') return <ProfileScreen/>;
+      return <HomeScreen onOpen={() => { setTab('lessons'); setScreen('lesson'); }}/>;
+    })();
+
+    return (
+      <ChromeWindow tabs={[{ title: 'ChangLek · Learn', active: true }]} url="learn.changlek.com" width={1240} height={780}>
+        <div className="surface" style={{ height: '100%' }} data-screen-label="01 Home">
+          <SideNav active={tab} onChange={(t) => { setTab(t); setScreen(t === 'lessons' ? 'path' : t); }}/>
+          {view}
+        </div>
+      </ChromeWindow>
+    );
+  }
+  setTimeout(() => {
+    ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+    setTimeout(() => lucide.createIcons(), 200);
+  }, 50);
+</script>
+</body>
+</html>

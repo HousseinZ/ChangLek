@@ -1,0 +1,355 @@
+/* ============================================================
+   ChangLek Design System — Colors & Type
+   "Learn · Grow · Shine"
+   ============================================================
+   Load this file once at the document root. It defines:
+     1. Font imports (Google Fonts CDN)
+     2. Color tokens (raw + semantic)
+     3. Type scale + semantic type vars
+     4. Spacing, radius, shadow, motion tokens
+     5. Element resets that wire semantic vars to h1/h2/p/etc.
+   ============================================================ */
+
+/* 1. ----------------------------- FONTS -------------------- */
+/* Brand display accent — Knewave (uploaded by user). Used sparingly for hero "tagline" moments. */
+@font-face {
+  font-family: 'Knewave';
+  src: url('fonts/Knewave-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Noto+Sans+Thai+Looped:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* 2. ----------------------------- TOKENS ------------------- */
+:root {
+  /* ----- Warm primary (coral / sunset orange) ----- */
+  --coral-50:  #FFF4EE;
+  --coral-100: #FFE3D2;
+  --coral-200: #FFC6A4;
+  --coral-300: #FFA571;
+  --coral-400: #FF8A55;
+  --coral-500: #FF7A45;   /* PRIMARY — brand color */
+  --coral-600: #ED6230;
+  --coral-700: #C84B22;
+  --coral-800: #9A3818;
+  --coral-900: #6B2510;
+
+  /* ----- Amber / gold (secondary warms) ----- */
+  --amber-50:  #FFF8EA;
+  --amber-100: #FFEEC4;
+  --amber-200: #FFDD8A;
+  --amber-300: #FFCB55;
+  --amber-400: #FFB547;   /* logo bow tie */
+  --amber-500: #F59E1F;
+  --amber-600: #D27F0A;
+
+  --gold-100:  #FFF1D6;
+  --gold-300:  #FFD66B;
+  --gold-500:  #F4C430;
+
+  /* ----- Cream (default surface) ----- */
+  --cream-50:  #FFFCF5;
+  --cream-100: #FFF6E5;
+  --cream-200: #FBEDD2;
+
+  /* ----- Sky blue accent (Nong's wink) ----- */
+  --sky-50:  #EAF7FD;
+  --sky-100: #CFEDFA;
+  --sky-200: #9DD9F2;
+  --sky-300: #6EC6EB;
+  --sky-400: #4FB8E5;     /* ACCENT */
+  --sky-500: #2A9FD1;
+  --sky-600: #1B7FAA;
+  --sky-700: #155F80;
+
+  /* ----- Warm neutrals (rose/amber-tinted ink) ----- */
+  --ink-50:  #FAF6F1;
+  --ink-100: #F0E9E0;
+  --ink-200: #DDD2C4;
+  --ink-300: #BCAD9C;
+  --ink-400: #94836F;
+  --ink-500: #6E5E4D;
+  --ink-600: #4F4234;
+  --ink-700: #38301F;     /* default body text */
+  --ink-800: #261F12;
+  --ink-900: #14100A;
+
+  /* ----- Celebration palette (logo letter colors) ----- */
+  /* Use ONLY for kid-facing celebrations / decorative confetti. Never for UI. */
+  --celebrate-blue:   #2C7BC9;
+  --celebrate-green:  #6FBE44;
+  --celebrate-orange: #F08A2A;
+  --celebrate-purple: #9C4FB8;
+  --celebrate-pink:   #E8438A;
+  --celebrate-teal:   #2EB7B0;
+
+  /* ----- Semantic colors ----- */
+  --success-50:  #ECF8E8;
+  --success-100: #D4EFC8;
+  --success-500: #6FBE44;
+  --success-700: #3F7D24;
+
+  --warning-50:  #FFF6E1;
+  --warning-500: #F59E1F;
+  --warning-700: #A86C0A;
+
+  --danger-50:  #FFEDE6;
+  --danger-500: #E25638;
+  --danger-700: #A83520;
+
+  --info-50:  #EAF7FD;
+  --info-500: #4FB8E5;
+  --info-700: #155F80;
+
+  /* ----- Surfaces ----- */
+  --surface:        var(--cream-50);
+  --surface-raised: #FFFFFF;
+  --surface-sunken: var(--cream-100);
+  --overlay:        rgba(74, 47, 30, 0.5); /* warm dark, not pure black */
+
+  /* ----- Foreground ----- */
+  --fg-1: var(--ink-800); /* primary text */
+  --fg-2: var(--ink-600); /* secondary */
+  --fg-3: var(--ink-400); /* tertiary, captions */
+  --fg-on-coral: #FFFFFF;
+  --fg-on-cream: var(--ink-800);
+
+  /* ----- Brand single hues ----- */
+  --brand:          var(--coral-500);
+  --brand-hover:    var(--coral-400);
+  --brand-press:    var(--coral-600);
+  --brand-shadow:   var(--coral-700); /* used for chunky button depth */
+  --accent:         var(--sky-400);
+
+  /* 3. -------------------------- TYPE -------------------- */
+  /* Families */
+  --font-brand:   'Knewave', 'Baloo 2', system-ui, sans-serif; /* hero/tagline accent only */
+  --font-display: 'Baloo 2', 'Noto Sans Thai Looped', system-ui, sans-serif;
+  --font-body:    'Nunito', 'Noto Sans Thai Looped', system-ui, sans-serif;
+  --font-thai:    'Noto Sans Thai Looped', 'Nunito', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  /* Type scale (fluid-ish, mobile-first) */
+  --fs-xs:   12px;
+  --fs-sm:   14px;
+  --fs-base: 17px;   /* default body — slightly bigger than 16 for parents on phones */
+  --fs-md:   19px;
+  --fs-lg:   22px;
+  --fs-xl:   28px;
+  --fs-2xl:  36px;
+  --fs-3xl:  48px;
+  --fs-4xl:  64px;
+  --fs-5xl:  84px;
+
+  /* Weights */
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Line heights */
+  --lh-tight:   1.15;
+  --lh-snug:    1.25;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.65;
+
+  /* Semantic type roles (applied below) */
+  --type-display: var(--fw-extrabold) var(--fs-4xl)/var(--lh-tight) var(--font-display);
+  --type-h1:      var(--fw-bold)      var(--fs-3xl)/var(--lh-tight) var(--font-display);
+  --type-h2:      var(--fw-bold)      var(--fs-2xl)/var(--lh-snug)  var(--font-display);
+  --type-h3:      var(--fw-bold)      var(--fs-xl) /var(--lh-snug)  var(--font-display);
+  --type-h4:      var(--fw-semibold)  var(--fs-lg) /var(--lh-snug)  var(--font-body);
+  --type-lead:    var(--fw-regular)   var(--fs-md) /var(--lh-relaxed) var(--font-body);
+  --type-body:    var(--fw-regular)   var(--fs-base)/var(--lh-normal) var(--font-body);
+  --type-body-sm: var(--fw-regular)   var(--fs-sm) /var(--lh-normal) var(--font-body);
+  --type-label:   var(--fw-semibold)  var(--fs-sm) /var(--lh-snug)  var(--font-body);
+  --type-caption: var(--fw-regular)   var(--fs-xs) /var(--lh-snug)  var(--font-body);
+  --type-button:  var(--fw-bold)      var(--fs-base)/1 var(--font-display);
+  --type-mono:    var(--fw-regular)   var(--fs-sm) /var(--lh-normal) var(--font-mono);
+
+  /* 4. ------------------------- SPACING + RADIUS + SHADOW -- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  20px;
+  --s-6:  24px;
+  --s-8:  32px;
+  --s-10: 40px;
+  --s-14: 56px;
+  --s-20: 80px;
+  --s-30: 120px;
+
+  --r-sm:   8px;
+  --r-md:   14px;
+  --r-lg:   20px;
+  --r-xl:   28px;
+  --r-2xl:  36px;
+  --r-pill: 999px;
+
+  /* Warm-tinted shadows. Never neutral black. */
+  --shadow-sm:  0 1px 2px rgba(255, 122, 69, 0.10);
+  --shadow-md:  0 4px 16px rgba(255, 122, 69, 0.10), 0 1px 3px rgba(255, 122, 69, 0.06);
+  --shadow-lg:  0 12px 32px rgba(255, 122, 69, 0.14), 0 2px 6px rgba(255, 122, 69, 0.08);
+  --shadow-xl:  0 24px 48px rgba(255, 122, 69, 0.18), 0 4px 8px rgba(255, 122, 69, 0.10);
+  /* Inner highlight on top edge for tactile cards */
+  --inner-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  /* Chunky button depth — solid color, no blur */
+  --btn-depth-coral: 0 4px 0 var(--coral-700);
+  --btn-depth-sky:   0 4px 0 var(--sky-600);
+  --btn-depth-amber: 0 4px 0 var(--amber-600);
+  --btn-depth-cream: 0 4px 0 var(--ink-200);
+
+  /* 5. ------------------------- MOTION ---------------------- */
+  --ease-bounce:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --dur-micro:    150ms;
+  --dur-std:      250ms;
+  --dur-emph:     400ms;
+  --dur-celebrate: 700ms;
+}
+
+/* ============================================================
+   ELEMENT RESETS — wire semantic vars to native tags
+   ============================================================ */
+html { color-scheme: light; }
+body {
+  font: var(--type-body);
+  color: var(--fg-1);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 var(--s-3);
+  color: var(--ink-900);
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+h1 { font: var(--type-h1); }
+h2 { font: var(--type-h2); }
+h3 { font: var(--type-h3); }
+h4 { font: var(--type-h4); }
+
+p {
+  margin: 0 0 var(--s-3);
+  font: var(--type-body);
+  text-wrap: pretty;
+}
+
+small { font: var(--type-caption); color: var(--fg-3); }
+code, kbd, pre { font-family: var(--font-mono); }
+strong, b { font-weight: var(--fw-bold); color: var(--ink-900); }
+
+a {
+  color: var(--sky-600);
+  text-decoration: none;
+  text-underline-offset: 3px;
+  transition: color var(--dur-micro) var(--ease-standard);
+}
+a:hover { text-decoration: underline; color: var(--sky-700); }
+
+/* Lucide icon defaults — chunkier strokes, rounded caps */
+.lucide,
+[data-lucide] {
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Selection color */
+::selection {
+  background: var(--coral-200);
+  color: var(--ink-900);
+}
+
+/* ============================================================
+   UTILITY: brand button (.cl-btn)
+   The most distinctive component — chunky press depth.
+   ============================================================ */
+.cl-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--s-2);
+  font: var(--type-button);
+  padding: 14px 24px;
+  border-radius: var(--r-pill);
+  border: none;
+  cursor: pointer;
+  background: var(--coral-500);
+  color: var(--fg-on-coral);
+  box-shadow: var(--btn-depth-coral);
+  transform: translateY(0);
+  transition: transform var(--dur-micro) var(--ease-bounce),
+              box-shadow var(--dur-micro) var(--ease-standard),
+              background var(--dur-micro) var(--ease-standard);
+  user-select: none;
+  letter-spacing: 0.01em;
+}
+.cl-btn:hover { background: var(--coral-400); transform: translateY(-1px); box-shadow: 0 5px 0 var(--coral-700); }
+.cl-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--coral-700); }
+.cl-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+.cl-btn--secondary { background: var(--cream-100); color: var(--ink-800); box-shadow: var(--btn-depth-cream); }
+.cl-btn--secondary:hover { background: #FFF; box-shadow: 0 5px 0 var(--ink-200); }
+.cl-btn--secondary:active { box-shadow: 0 1px 0 var(--ink-200); }
+
+.cl-btn--accent { background: var(--sky-400); box-shadow: var(--btn-depth-sky); }
+.cl-btn--accent:hover { background: var(--sky-300); box-shadow: 0 5px 0 var(--sky-600); }
+.cl-btn--accent:active { box-shadow: 0 1px 0 var(--sky-600); }
+
+.cl-btn--ghost { background: transparent; color: var(--ink-800); box-shadow: none; }
+.cl-btn--ghost:hover { background: var(--cream-100); box-shadow: none; transform: none; }
+
+.cl-btn--lg { padding: 18px 32px; font-size: var(--fs-lg); }
+.cl-btn--sm { padding: 10px 18px; font-size: var(--fs-sm); }
+
+/* ============================================================
+   UTILITY: card
+   ============================================================ */
+.cl-card {
+  background: var(--surface-raised);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md), var(--inner-highlight);
+  padding: var(--s-6);
+  transition: transform var(--dur-std) var(--ease-bounce),
+              box-shadow var(--dur-std) var(--ease-standard);
+}
+.cl-card--interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--inner-highlight);
+}
+
+/* ============================================================
+   UTILITY: tinted icon tile
+   ============================================================ */
+.cl-icon-tile {
+  width: 40px; height: 40px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--r-md);
+  background: var(--coral-100);
+  color: var(--coral-700);
+  flex-shrink: 0;
+}
+.cl-icon-tile--sky    { background: var(--sky-100);   color: var(--sky-700); }
+.cl-icon-tile--amber  { background: var(--amber-100); color: var(--amber-600); }
+.cl-icon-tile--success{ background: var(--success-100); color: var(--success-700); }
+.cl-icon-tile--lg     { width: 56px; height: 56px; border-radius: var(--r-lg); }
+
+/* ============================================================
+   UTILITY: chip / badge
+   ============================================================ */
+.cl-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font: var(--type-label);
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  background: var(--cream-100);
+  color: var(--ink-700);
+}
+.cl-chip--coral   { background: var(--coral-100);   color: var(--coral-700); }
+.cl-chip--sky     { background: var(--sky-100);     color: var(--sky-700); }
+.cl-chip--success { background: var(--success-100); color: var(--success-700); }
+.cl-chip--amber   { background: var(--amber-100);   color: var(--amber-600); }

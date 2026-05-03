@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Components — Icon Tiles</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body { margin: 0; padding: 24px 20px; background: var(--surface); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .item .lbl { font: var(--type-caption); color: var(--fg-3); }
+</style></head>
+<body>
+  <div class="item"><span class="cl-icon-tile cl-icon-tile--lg"><i data-lucide="book-open"></i></span><div class="lbl">Lessons</div></div>
+  <div class="item"><span class="cl-icon-tile cl-icon-tile--lg cl-icon-tile--sky"><i data-lucide="trophy"></i></span><div class="lbl">Achievements</div></div>
+  <div class="item"><span class="cl-icon-tile cl-icon-tile--lg cl-icon-tile--amber"><i data-lucide="flame"></i></span><div class="lbl">Streak</div></div>
+  <div class="item"><span class="cl-icon-tile cl-icon-tile--lg cl-icon-tile--success"><i data-lucide="check-circle-2"></i></span><div class="lbl">Done</div></div>
+  <div class="item"><span class="cl-icon-tile"><i data-lucide="calendar"></i></span><div class="lbl">Schedule</div></div>
+  <div class="item"><span class="cl-icon-tile cl-icon-tile--sky"><i data-lucide="users"></i></span><div class="lbl">Class</div></div>
+  <div class="item"><span class="cl-icon-tile cl-icon-tile--amber"><i data-lucide="star"></i></span><div class="lbl">Star</div></div>
+  <script>lucide.createIcons();</script>
+</body></html>
