@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, Gamepad2, Home, UserRound, type LucideIcon } from "lucide-react";
+import { ArrowLeftRight, BookOpen, Gamepad2, Home, LogOut, UserRound, type LucideIcon } from "lucide-react";
+import { logout, switchProfile } from "@/app/(auth)/actions";
+import { Avatar } from "@/app/(auth)/_components/Avatar";
 
 type NavItem = { href: string; icon: LucideIcon; label: string; match: (p: string) => boolean };
 
@@ -14,20 +15,31 @@ const items: NavItem[] = [
   { href: "/me",      icon: UserRound,  label: "Me",      match: (p) => p.startsWith("/me") },
 ];
 
-export function SideNav() {
+type Props = {
+  profile: {
+    name: string;
+    avatarIcon: string;
+    avatarColor: string;
+  };
+};
+
+export function SideNav({ profile }: Props) {
   const pathname = usePathname();
+
   return (
     <aside style={{
       width: 200, height: "100%", background: "var(--cream-50)",
       borderRight: "1px solid var(--ink-100)", padding: "24px 12px",
       display: "flex", flexDirection: "column", gap: 6, flexShrink: 0,
+      overflowY: "auto",
     }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "4px 10px 18px" }}>
-        <Image src="/assets/nong-avatar.png" alt="" width={40} height={40} style={{ borderRadius: "50%" }}/>
-        <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 20, color: "var(--coral-600)" }}>
-          ChangLek
+        <Avatar icon={profile.avatarIcon} color={profile.avatarColor} size={40} hasShadow={false}/>
+        <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 18, color: "var(--coral-600)", lineHeight: 1.1 }}>
+          {profile.name}
         </div>
       </div>
+
       {items.map((item) => {
         const on = item.match(pathname);
         const Icon = item.icon;
@@ -44,6 +56,28 @@ export function SideNav() {
           </Link>
         );
       })}
+
+      <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: 4 }}>
+        <form action={switchProfile}>
+          <button type="submit" style={navButtonStyle}>
+            <ArrowLeftRight size={22}/> Switch profile
+          </button>
+        </form>
+        <form action={logout}>
+          <button type="submit" style={navButtonStyle}>
+            <LogOut size={22}/> Log out
+          </button>
+        </form>
+      </div>
     </aside>
   );
 }
+
+const navButtonStyle: React.CSSProperties = {
+  width: "100%",
+  display: "flex", alignItems: "center", gap: 12,
+  padding: "12px 14px", borderRadius: "var(--r-md)",
+  background: "transparent", border: "none", cursor: "pointer", textAlign: "left",
+  color: "var(--ink-500)",
+  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16,
+};
